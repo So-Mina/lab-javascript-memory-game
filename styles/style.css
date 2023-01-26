@@ -88,3 +88,16 @@ p {
   font-size: 20px;
   text-align: center;
 }
+
+dialog {
+  margin: auto;
+  padding: 2rem;
+}
+
+#dialog button{
+  margin: auto;
+}
+
+dialog::backdrop {
+  backdrop-filter: sepia(1) brightness(50%) blur(5px);
+}

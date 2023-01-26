@@ -11,7 +11,12 @@ class MemoryGame {
       return undefined
     }
 
-    this.cards.sort((a, b) => (Math.random() - 0.5))
+    for (let i = this.cards.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * this.cards.length);
+      [this.cards[i], this.cards[j]] = [this.cards[j], this.cards[i]]
+    }
+
+    return this.cards
   }
 
   checkIfPair(card1, card2) {
@@ -26,7 +31,7 @@ class MemoryGame {
   }
 
   checkIfFinished() {
-    if (this.pairsGuessed === (this.cards.length/2)) {
+    if (this.pairsGuessed === (this.cards.length / 2)) {
       return true
       } else {
       return false
