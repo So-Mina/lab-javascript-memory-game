@@ -27,6 +27,8 @@ const cards = [
 
 const memoryGame = new MemoryGame(cards);
 
+memoryGame.shuffleCards()
+
 window.addEventListener('load', (event) => {
   let html = '';
   memoryGame.cards.forEach((pic) => {
@@ -38,6 +40,7 @@ window.addEventListener('load', (event) => {
     `;
   });
 
+  
   // Add all the divs to the HTML
   document.querySelector('#memory-board').innerHTML = html;
 
